@@ -16,7 +16,17 @@ const app = express();
 // ===============================
 // 🔧 GLOBAL MIDDLEWARE
 // ===============================
-app.use(cors());
+
+// 🛡️ CORS FIX: Allowing Vercel and Localhost
+app.use(cors({
+  origin: [
+    "http://localhost:5173", // Allows your local laptop to connect
+    "https://eduai-dashboard.vercel.app" // ALLOWS VERCEL TO CONNECT
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(express.json());
 
 // ===============================
