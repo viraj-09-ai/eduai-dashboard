@@ -11,7 +11,7 @@ export function StudentProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   // 🔌 YOUR BACKEND URL
-  const API_URL = "http://localhost:5000/api/students";
+  const API_URL = "https://eduai-dashboard.onrender.com/api/students";
 
   // Helper function to get the token (assuming you store it in localStorage after login)
   const getToken = () => localStorage.getItem("token");

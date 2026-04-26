@@ -30,7 +30,7 @@ export default function Messages() {
     const fetchMessages = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch(`http://localhost:5000/api/messages/${activeChatId}`, {
+        const res = await fetch(`https://eduai-dashboard.onrender.com/api/messages/${activeChatId}`, {
           headers: { "Authorization": `Bearer ${token}` }
         });
         const data = await res.json();
@@ -65,7 +65,7 @@ export default function Messages() {
 
     try {
       // Save User message to DB
-      await fetch("http://localhost:5000/api/messages", {
+      await fetch("https://eduai-dashboard.onrender.com/api/messages", {
         method: "POST",
         headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
         body: JSON.stringify(newMsgData)
@@ -131,7 +131,7 @@ export default function Messages() {
           setMessages(prev => [...prev, optimisticBotMsg]);
           
           // Save AI message to MongoDB
-          await fetch("http://localhost:5000/api/messages", {
+          await fetch("https://eduai-dashboard.onrender.com/api/messages", {
             method: "POST",
             headers: { "Content-Type": "application/json", "Authorization": `Bearer ${token}` },
             body: JSON.stringify(botMsgData)

@@ -15,7 +15,7 @@ export function AuthProvider({ children }) {
   const navigate = useNavigate();
 
   // 🔌 YOUR BACKEND AUTH URL
-  const AUTH_URL = "http://localhost:5000/api/auth";
+  const AUTH_URL = "https://eduai-dashboard.onrender.com/api/auth";
 
   useEffect(() => {
     if (token) {
